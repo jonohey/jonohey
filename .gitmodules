@@ -1,0 +1,6 @@
+[submodule "hugo-split-theme"]
+	path = hugo-split-theme
+	url = https://github.com/jonohey/hugo-split-theme
+[submodule "themes/hugo-split-theme"]
+	path = themes/hugo-split-theme
+	url = https://github.com/jonohey/hugo-split-theme
