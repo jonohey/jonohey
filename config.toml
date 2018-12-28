@@ -1,5 +1,5 @@
 # Site settings
-baseURL = "//example.org"
+baseURL = "//unruffled-colden-1e34b2.netlify.com/"
 languageCode = "en-US"
 title = "Jono Hey"
 theme = "hugo-split-theme"
