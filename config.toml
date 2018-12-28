@@ -1,0 +1,60 @@
+# Site settings
+baseURL = "//example.org"
+languageCode = "en-US"
+title = "Jono Hey"
+theme = "hugo-split-theme"
+disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS", "sitemap"]
+
+# Enter your tracking code to enable Google Analytics
+googleAnalytics = ""
+
+# Copyright
+copyright = "&copy;2018 Jono Hey"
+
+[params]
+
+  # Metadata for search engines and social sharing
+  author = "Jono Hey"
+  description = "Experienced product, UX, design and startup veteran based in London. Creator of sketchplanations.com"
+  shareImage = "images/social.jpg"
+  twitterHandle = "jonohey"
+
+  # Favicon
+  favicon = "favicon.ico"
+
+  # Section - Visual
+  [params.visual]
+
+    # Image
+    [params.visual.image]
+      enable = true
+      file = "images/jono-hey.jpg"
+      position = "center center"
+
+    # Video
+    [params.visual.video]
+      enable = false
+      mute = true
+      # file = "videos/background.mp4"
+      youtubeId = "MoRIRzZzgTI"
+
+  # Links
+  #
+  # Links List — can do 3 separate links using the same format list1, list2, list3
+  [[params.links]]
+    [params.links.list1]
+      heading = "Connect"
+
+      [[params.links.list1.link]]
+        text = "Twitter"
+        url = "https://twitter.com/jonohey"
+
+      [[params.links.list1.link]]
+        text = "LinkedIn"
+        url = "http://uk.linkedin.com/in/jonohey"
+
+
+  # The original template is released under the Creative Commons Attribution 3.0 License.
+  # Please keep the original attribution link when using for your own project.
+  # If you'd like to use the template without the attribution, you can check out
+  # the license option via the template author's website: https://onepagelove.com/split
