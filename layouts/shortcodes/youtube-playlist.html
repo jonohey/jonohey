@@ -1,0 +1,6 @@
+{{- $id := .Get "id" -}}
+{{- $class := .Get "class" -}}
+
+<div class="video-embed">
+  <iframe src="https://www.youtube.com/embed/videoseries?list={{ $id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>

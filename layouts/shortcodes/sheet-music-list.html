@@ -3,9 +3,11 @@
 {{- $class := .Get "class" -}}
 {{- $files := readDir $path -}}
 <table class="{{ $class }}">
-    <th>Track</th>
+    <th style="width: 80px;">Piece</th>
+    <th>&nbsp;</th>
 {{- range $files }}
     <tr>
+        <td>&nbsp;</td>
         <td><a href="{{ $pathURL }}{{ .Name | relURL }}" target="_blank"> {{ .Name }}</a></td>
     </tr>
 {{- end }}
