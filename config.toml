@@ -6,7 +6,7 @@ theme = "hugo-split-theme"
 disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS", "sitemap"]
 
 # Enter your tracking code to enable Google Analytics
-googleAnalytics = ""
+googleAnalytics = "UA-131546849-1"
 
 # Copyright
 copyright = "&copy;2018 Jono Hey"
@@ -43,13 +43,25 @@ copyright = "&copy;2018 Jono Hey"
   # Links List — can do 3 separate links using the same format list1, list2, list3
   [[params.links]]
     [params.links.list1]
-      heading = "Connect"
+      heading = "Nav"
 
       [[params.links.list1.link]]
+        text = "Home"
+        url = "/"
+
+      [[params.links.list1.link]]
+        text = "Music"
+        url = "/music"
+
+  [[params.links]]
+    [params.links.list2]
+      heading = "Connect"
+
+      [[params.links.list2.link]]
         text = "Twitter"
         url = "https://twitter.com/jonohey"
 
-      [[params.links.list1.link]]
+      [[params.links.list2.link]]
         text = "LinkedIn"
         url = "http://uk.linkedin.com/in/jonohey"
 
