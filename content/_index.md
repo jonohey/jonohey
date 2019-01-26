@@ -5,5 +5,5 @@ tagline = "Leaving things better"
 
 Experienced product, UX, design and startup veteran based in London.
 
-Project:
+Sooner or later, everything I know will be on:
 [Sketchplanations](https://www.sketchplanations.com)
