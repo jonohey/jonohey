@@ -50,6 +50,10 @@ copyright = "&copy;2018 Jono Hey"
         url = "/"
 
       [[params.links.list1.link]]
+        text = "Photography"
+        url = "https://www.flickr.com/photos/palojono/"
+
+      [[params.links.list1.link]]
         text = "Music"
         url = "/music"
 
@@ -72,10 +76,6 @@ copyright = "&copy;2018 Jono Hey"
       [[params.links.list2.link]]
         text = "LinkedIn"
         url = "http://uk.linkedin.com/in/jonohey"
-
-      [[params.links.list2.link]]
-        text = "Flickr"
-        url = "https://www.flickr.com/photos/palojono/"
 
 
   # The original template is released under the Creative Commons Attribution 3.0 License.
