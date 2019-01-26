@@ -54,12 +54,12 @@ copyright = "&copy;2018 Jono Hey"
         url = "/music"
 
       [[params.links.list1.link]]
-        text = "Research"
-        url = "/research"
-
-      [[params.links.list1.link]]
         text = "Books"
         url = "/books"
+
+      [[params.links.list1.link]]
+        text = "Research"
+        url = "/research"
 
   [[params.links]]
     [params.links.list2]
