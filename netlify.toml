@@ -1,2 +1,7 @@
 # Redirects
-/zoom         https://us04web.zoom.us/j/5226698361?pwd=MVdjMHVRR2FpK1ppekdHUDUwY3Fzdz09
+
+[[redirects]]
+  from = "/zoom"
+  to = "https://us04web.zoom.us/j/5226698361?pwd=MVdjMHVRR2FpK1ppekdHUDUwY3Fzdz09"
+  status = 302
+  force = true
