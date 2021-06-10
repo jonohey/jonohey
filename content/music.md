@@ -40,6 +40,6 @@ Fancy trying any out for yourself? I transcribed some to sheet music for solo pi
 
 I had the pleasure of collaborating on some trance tracks with the brilliant [Sneijder](https://soundcloud.com/sneijder).
 
-{{< youtube ksBDIqpUbG0 video-embed >}}
+{{< youtube aAqvCEZD1Dg video-embed >}}
 
 {{< youtube i-I9ascZg3w video-embed >}}
