@@ -6,17 +6,12 @@ oneColumn = true
 +++
 
 ## Fresh Start
-
-{{< rawhtml >}}
-
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5JMIw7f71dsF4IefH1R4EZ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-{{< /rawhtml >}}
-
-[Listen to Fresh Start on other music platforms](https://tr.ee/otzCiGvhc7)
+In 2022 I released a short album.
+[Listen to Fresh Start](https://tr.ee/otzCiGvhc7)
 
 ## Piano
 
-I've written a lot of my own piano music. Try this 2 hour video of original music while getting some work done.
+I've written a lot of my own piano music. Aside from the more recent Fresh Start album, here's a 2-hour video of original music:
 
 {{< youtube MoRIRzZzgTI video-embed >}}
 
