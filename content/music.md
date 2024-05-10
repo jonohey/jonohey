@@ -1,12 +1,12 @@
 +++
-title = "Music"
-tagline = "Listen up 📻"
+title = "Music by Jono Hey"
+tagline = "Have a listen 📻"
 type = "nav"
 oneColumn = true
 +++
 
 ## Fresh Start
-In 2022 I released a short album.
+In 2022, I released a short album.
 [Listen to Fresh Start](https://tr.ee/otzCiGvhc7)
 
 ## Piano
