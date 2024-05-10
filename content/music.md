@@ -5,6 +5,14 @@ type = "nav"
 oneColumn = true
 +++
 
+## Fresh Start
+
+{{< rawhtml >}}
+  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5JMIw7f71dsF4IefH1R4EZ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+{{< /rawhtml >}}
+
+[Listen to Fresh Start on other music platforms](https://tr.ee/otzCiGvhc7)
+
 ## Piano
 
 I've written a lot of my own piano music. Try this 2 hour video of original music while getting some work done.
@@ -15,7 +23,7 @@ Or listen to some individual tracks on Youtube:
 
 {{< youtube-playlist id="PLVajIt_b5zSWOFD4ETRvdbI21Lpg2Q4ox" class="video-embed" >}}
 
-Or right here:
+Or here are some older tracks:
 
 {{< audio-track title="Berlin" class="audio-embed" >}}
 {{< audio-track title="Monday" class="audio-embed" >}}
