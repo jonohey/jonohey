@@ -8,6 +8,7 @@ oneColumn = true
 ## Fresh Start
 
 {{< rawhtml >}}
+
   <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5JMIw7f71dsF4IefH1R4EZ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 {{< /rawhtml >}}
 
