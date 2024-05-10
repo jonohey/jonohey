@@ -1,13 +1,17 @@
 +++
-title = "Music"
-tagline = "Listen up 📻"
+title = "Music by Jono Hey"
+tagline = "Have a listen 📻"
 type = "nav"
 oneColumn = true
 +++
 
+## Fresh Start
+In 2022, I released a short album.
+[Listen to Fresh Start](https://tr.ee/otzCiGvhc7)
+
 ## Piano
 
-I've written a lot of my own piano music. Try this 2 hour video of original music while getting some work done.
+I've written a lot of my own piano music. Aside from the more recent Fresh Start album, here's a 2-hour video of original music:
 
 {{< youtube MoRIRzZzgTI video-embed >}}
 
@@ -15,7 +19,7 @@ Or listen to some individual tracks on Youtube:
 
 {{< youtube-playlist id="PLVajIt_b5zSWOFD4ETRvdbI21Lpg2Q4ox" class="video-embed" >}}
 
-Or right here:
+Or here are some older tracks:
 
 {{< audio-track title="Berlin" class="audio-embed" >}}
 {{< audio-track title="Monday" class="audio-embed" >}}
