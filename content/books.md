@@ -1,11 +1,13 @@
 +++
-title = "Books"
-tagline = "Books by Jono Hey"
+title = "Books by Jono Hey"
+tagline = "Have a read"
 type = "nav"
 oneColumn = true
 +++
 
 ## Big Ideas Little Pictures
+
+<a href="https://sketchplanations.com/big-ideas-little-pictures?utm_source=website&utm_medium=book-page&utm_campaign=book-link&utm_id=big-ideas-book" class="book-cover-link"><img src="/images/big-ideas-little-pictures-book-cover-jono-hey.png" class="book-cover"></a>
 
 Bill Gates said:
 
@@ -13,11 +15,9 @@ Bill Gates said:
 
 And who am I to disagree?
 
-<a href="https://sketchplanations.com/big-ideas-little-pictures?utm_source=website&utm_medium=book-page&utm_campaign=book-link&utm_id=big-ideas-book" class="book-cover-link"><img src="/images/big-ideas-little-pictures-book-cover-jono-hey.png" class="book-cover"></a>
-
 Order [Big Ideas Little Pictures](https://sketchplanations.com/big-ideas-little-pictures?utm_source=website&utm_medium=book-page&utm_campaign=book-link&utm_id=big-ideas-book)
 
-You can also find several of my illustrations in Bill Gates' book, [How to Prevent the Next Pandemic](https://www.gatesnotes.com/How-to-Prevent-the-Next-Pandemic)
+You can also find a number of my illustrations in Bill Gates' book, [How to Prevent the Next Pandemic](https://www.gatesnotes.com/How-to-Prevent-the-Next-Pandemic)
 
 ## Beyond the Bay
 
