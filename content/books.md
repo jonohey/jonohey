@@ -13,7 +13,7 @@ Bill Gates said:
 
 And who am I to disagree?
 
-<a href="https://sketchplanations.com/big-ideas-little-pictures?utm_source=website&utm_medium=book-page&utm_campaign=book-link&utm_id=big-ideas-book" class="book-cover-link"><img src="/images/beyond-the-bay-book-cover-jono-hey.png" class="book-cover"></a>
+<a href="https://sketchplanations.com/big-ideas-little-pictures?utm_source=website&utm_medium=book-page&utm_campaign=book-link&utm_id=big-ideas-book" class="book-cover-link"><img src="/images/big-ideas-little-pictures-book-cover-jono-hey.png" class="book-cover"></a>
 
 Order [Big Ideas Little Pictures](https://sketchplanations.com/big-ideas-little-pictures?utm_source=website&utm_medium=book-page&utm_campaign=book-link&utm_id=big-ideas-book)
 
