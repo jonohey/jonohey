@@ -1,5 +1,5 @@
 # Site settings
-baseURL = "//jono.netlify.com/"
+baseURL = "//www.jonohey.com/"
 languageCode = "en-US"
 title = "Jono Hey"
 theme = "hugo-split-theme"
@@ -9,7 +9,7 @@ disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS", "sitemap"]
 googleAnalytics = "UA-131546849-1"
 
 # Copyright
-copyright = "&copy; 2021 Jono Hey"
+copyright = "&copy; 2024 Jono Hey"
 
 [params]
 
