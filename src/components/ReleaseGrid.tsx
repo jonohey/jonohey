@@ -12,7 +12,7 @@ const linkClass =
   "text-accent underline decoration-edge underline-offset-4 transition-colors hover:decoration-accent";
 
 const navButtonClass =
-  "absolute top-1/2 z-10 flex size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-edge bg-panel/80 text-2xl leading-none text-paper transition-colors hover:border-accent hover:text-accent";
+  "absolute top-1/2 z-10 hidden size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-edge bg-panel/80 text-2xl leading-none text-paper transition-colors hover:border-accent hover:text-accent sm:flex";
 
 function ExternalLink({
   href,
@@ -96,13 +96,13 @@ export function ReleaseGrid({ items }: { items: ReleaseWithCover[] }) {
                 type="button"
                 onClick={() => setIndex(i)}
                 aria-label={`View ${release.title} cover artwork full screen`}
-                className="block w-3/5 cursor-zoom-in overflow-hidden rounded-xl border border-line"
+                className="block w-full cursor-zoom-in md:w-3/5 overflow-hidden rounded-xl border border-line"
               >
                 <Image
                   src={cover.image}
                   alt={`Cover artwork for ${release.title} by Jono Hey`}
                   placeholder="blur"
-                  sizes="(min-width: 1024px) 290px, (min-width: 768px) 27vw, 60vw"
+                  sizes="(min-width: 1024px) 290px, (min-width: 768px) 27vw, 100vw"
                   className="aspect-square w-full object-cover"
                 />
               </button>
@@ -116,7 +116,7 @@ export function ReleaseGrid({ items }: { items: ReleaseWithCover[] }) {
               </div>
               <h3 className="mt-3 font-medium text-paper">{release.title}</h3>
               <p className="mt-1 text-sm text-muted">
-                {release.type} · {release.year} · {cover.location}
+                {release.type} · {release.year}
               </p>
               <div className="mt-2 [&>p]:justify-start">
                 <PurchaseLinks {...item} />
@@ -135,13 +135,15 @@ export function ReleaseGrid({ items }: { items: ReleaseWithCover[] }) {
           else if (e.key === "ArrowRight") step(1);
         }}
         onTouchStart={(e) => {
+          // A second finger means pinch-zoom, not a swipe.
           const t = e.touches[0];
-          touchStart.current = { x: t.clientX, y: t.clientY };
+          touchStart.current =
+            e.touches.length === 1 ? { x: t.clientX, y: t.clientY } : null;
         }}
         onTouchEnd={(e) => {
           const start = touchStart.current;
           touchStart.current = null;
-          if (!start) return;
+          if (!start || (window.visualViewport?.scale ?? 1) > 1) return;
           const t = e.changedTouches[0];
           const dx = t.clientX - start.x;
           const dy = t.clientY - start.y;
@@ -155,7 +157,7 @@ export function ReleaseGrid({ items }: { items: ReleaseWithCover[] }) {
         className="fixed inset-0 m-0 h-dvh max-h-none w-dvw max-w-none cursor-zoom-out bg-ink p-0 outline-none! text-paper backdrop:bg-transparent"
       >
         {selected && (
-          <div className="flex h-full touch-pan-y flex-col items-center justify-center gap-4 sm:p-8">
+          <div className="flex h-full flex-col items-center justify-center gap-4 sm:p-8">
             <Image
               key={selected.release.spotifyId}
               src={selected.cover.image}
@@ -164,9 +166,12 @@ export function ReleaseGrid({ items }: { items: ReleaseWithCover[] }) {
               sizes="(min-width: 640px) 85vh, 100vw"
               className="aspect-square max-h-[80dvh] w-full cursor-default object-contain sm:w-auto sm:max-w-full"
             />
-            <p aria-live="polite" className="px-4 text-center text-sm text-muted">
-              {selected.release.title} · {selected.cover.location}
-            </p>
+            <div aria-live="polite" className="px-4 text-center">
+              <p className="text-paper">{selected.release.title}</p>
+              <p className="mt-1 text-sm text-muted">
+                Cover: {selected.cover.location}
+              </p>
+            </div>
             <PurchaseLinks {...selected} />
           </div>
         )}
