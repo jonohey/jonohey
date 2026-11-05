@@ -11,6 +11,9 @@ export type ReleaseWithCover = { release: Release; cover: CoverArt };
 const linkClass =
   "text-accent underline decoration-edge underline-offset-4 transition-colors hover:decoration-accent";
 
+const navButtonClass =
+  "absolute top-1/2 z-10 hidden size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-edge bg-panel/80 text-2xl leading-none text-paper transition-colors hover:border-accent hover:text-accent sm:flex";
+
 function ExternalLink({
   href,
   label,
@@ -64,7 +67,14 @@ function PurchaseLinks({ release, cover }: ReleaseWithCover) {
 
 export function ReleaseGrid({ items }: { items: ReleaseWithCover[] }) {
   const dialog = useRef<HTMLDialogElement>(null);
-  const [selected, setSelected] = useState<ReleaseWithCover | null>(null);
+  const [index, setIndex] = useState<number | null>(null);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const selected = index === null ? null : items[index];
+
+  const step = (delta: number) =>
+    setIndex((i) =>
+      i === null ? i : (i + delta + items.length) % items.length,
+    );
 
   useEffect(() => {
     const el = dialog.current;
@@ -78,21 +88,21 @@ export function ReleaseGrid({ items }: { items: ReleaseWithCover[] }) {
   return (
     <>
       <ul className="grid gap-x-8 gap-y-14 md:grid-cols-2">
-        {items.map((item) => {
+        {items.map((item, i) => {
           const { release, cover } = item;
           return (
             <li key={release.spotifyId}>
               <button
                 type="button"
-                onClick={() => setSelected(item)}
+                onClick={() => setIndex(i)}
                 aria-label={`View ${release.title} cover artwork full screen`}
-                className="block w-full cursor-zoom-in overflow-hidden rounded-xl border border-line"
+                className="block w-full cursor-zoom-in md:w-3/5 overflow-hidden rounded-xl border border-line"
               >
                 <Image
                   src={cover.image}
                   alt={`Cover artwork for ${release.title} by Jono Hey`}
                   placeholder="blur"
-                  sizes="(min-width: 1024px) 480px, (min-width: 768px) 45vw, 100vw"
+                  sizes="(min-width: 1024px) 290px, (min-width: 768px) 27vw, 100vw"
                   className="aspect-square w-full object-cover"
                 />
               </button>
@@ -106,7 +116,7 @@ export function ReleaseGrid({ items }: { items: ReleaseWithCover[] }) {
               </div>
               <h3 className="mt-3 font-medium text-paper">{release.title}</h3>
               <p className="mt-1 text-sm text-muted">
-                {release.type} · {release.year} · {cover.location}
+                {release.type} · {release.year}
               </p>
               <div className="mt-2 [&>p]:justify-start">
                 <PurchaseLinks {...item} />
@@ -119,26 +129,71 @@ export function ReleaseGrid({ items }: { items: ReleaseWithCover[] }) {
         ref={dialog}
         tabIndex={-1}
         aria-label={selected ? `${selected.release.title} cover artwork` : undefined}
-        onClose={() => setSelected(null)}
+        onClose={() => setIndex(null)}
+        onKeyDown={(e) => {
+          if (e.key === "ArrowLeft") step(-1);
+          else if (e.key === "ArrowRight") step(1);
+        }}
+        onTouchStart={(e) => {
+          // A second finger means pinch-zoom, not a swipe.
+          const t = e.touches[0];
+          touchStart.current =
+            e.touches.length === 1 ? { x: t.clientX, y: t.clientY } : null;
+        }}
+        onTouchEnd={(e) => {
+          const start = touchStart.current;
+          touchStart.current = null;
+          if (!start || (window.visualViewport?.scale ?? 1) > 1) return;
+          const t = e.changedTouches[0];
+          const dx = t.clientX - start.x;
+          const dy = t.clientY - start.y;
+          if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+            step(dx < 0 ? 1 : -1);
+          }
+        }}
         onClick={(e) => {
-          if (!(e.target as HTMLElement).closest("img, a")) e.currentTarget.close();
+          if (!(e.target as HTMLElement).closest("img, a, button")) e.currentTarget.close();
         }}
         className="fixed inset-0 m-0 h-dvh max-h-none w-dvw max-w-none cursor-zoom-out bg-ink p-0 outline-none! text-paper backdrop:bg-transparent"
       >
         {selected && (
           <div className="flex h-full flex-col items-center justify-center gap-4 sm:p-8">
             <Image
+              key={selected.release.spotifyId}
               src={selected.cover.image}
               alt={`Cover artwork for ${selected.release.title} by Jono Hey`}
               quality={90}
               sizes="(min-width: 640px) 85vh, 100vw"
               className="aspect-square max-h-[80dvh] w-full cursor-default object-contain sm:w-auto sm:max-w-full"
             />
-            <p className="px-4 text-center text-sm text-muted">
-              {selected.release.title} · {selected.cover.location}
-            </p>
+            <div aria-live="polite" className="px-4 text-center">
+              <p className="text-paper">{selected.release.title}</p>
+              <p className="mt-1 text-sm text-muted">
+                Cover: {selected.cover.location}
+              </p>
+            </div>
             <PurchaseLinks {...selected} />
           </div>
+        )}
+        {items.length > 1 && (
+          <>
+            <button
+              type="button"
+              onClick={() => step(-1)}
+              aria-label="Previous cover"
+              className={navButtonClass + " left-2 sm:left-4"}
+            >
+              <span aria-hidden>‹</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => step(1)}
+              aria-label="Next cover"
+              className={navButtonClass + " right-2 sm:right-4"}
+            >
+              <span aria-hidden>›</span>
+            </button>
+          </>
         )}
         <button
           type="button"
