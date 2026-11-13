@@ -1,5 +1,6 @@
 import type { StaticImageData } from "next/image";
 import afterThePractice from "../../public/images/covers/after-the-practice.jpg";
+import ameliasDance from "../../public/images/covers/amelias-dance.jpg";
 import blossom from "../../public/images/covers/blossom.jpg";
 import deepDown from "../../public/images/covers/deep-down-and-not-forgotten.jpg";
 import foundling from "../../public/images/covers/foundling-reprise.jpg";
@@ -20,6 +21,12 @@ export type CoverArt = {
 
 // Keyed by the release's spotifyId (see `releases` in music.ts).
 export const coverArt: Record<string, CoverArt> = {
+  "1nE57DcoCozher3qu0nXYJ": {
+    image: ameliasDance,
+    location: "Mt Rainier rising over Seattle",
+    sheetMusicUrl:
+      "https://shop.spotify.com/en/artist/729QwZLCsOw3JtZmbQSFTj/product/amelias-dance-sheet-music-pdf-download",
+  },
   "2ynprhSHVBFBYIMIkzgKU9": {
     image: afterThePractice,
     location: "Mt Rainier rising over Seattle",
